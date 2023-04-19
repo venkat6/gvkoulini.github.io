@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Koulini Garimella | Ph.D.</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet"> 
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ce81bc62d6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<section class="header">
+    <nav>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-window-close" aria-hidden="true" onclick="hideMenu()"></i>
+            <ul>
+                <!-- <li><a href="">HOME</a></li> --><!-- 
+                <li><a href="Files/cv.pdf" download>CV</a></li> -->
+                <li><a href="#pblcs" onclick="hideMenu()">PUBLICATIONS</a></li>
+                <li><a href="#courses" onclick="hideMenu()">COURSES</li>
+                <li><a href="blog.html" onclick="hideMenu()">BLOG</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="text-box">
+        <img class="circular_image" src="Images/dp.jpg" width="100" height="125">
+        <!-- <img src="Images/dp.jpg" alt="Italian Trulli"> -->
+        <h1>  Lakshmi Jayalal         
+
+        </h1><p id="contact">Contact me at gevtvgvg@bhvdg.xjh
+<button onclick="Decrypt()" class="decrypt-btn">(Click here to decrypt the email ID)</button></p>
+        <p>Hi, I'm currently doing my Ph.D. from Indian Institute of Technology, Madras (IITM) under the guidance of Dr. Sheetal Kalyani. I'm currently exploring the areas of implicit regularization in linear regression problems. <br>I did my post graduate from Indian Institute of Technology (ISM), Dhanbad in communcations and signal processing. My thesis for post graduations is "Digital Signal Processing of Radio Occulted Data" under the guidance of Dr. Jaisingh Thankaraj (IIT Dhanbad) and Dr. Raj Kumar Choudhary (VSSC, ISRO). </p>
+        <a href="Files/cv.pdf" download class="btn" >DOWNLOAD RESUME</a>
+        <a href="Files/rs.pdf" download class="btn" >RESEARCH STATEMENT</a>
+    </div>
+</section>
+<!-- -----Publications------ -->
+<section class="pblcs">
+    <h1 id="pblcs">Publications</h1>
+    <p>Will be updated as soon as I publish another paper :). Hopefully sometime soon!!</p>
+    <p>
+        <ol>
+            <li>SINR Analysis of an IRS Assisted MU-MISO System<dd>Lakshmi Jayalal, Shashank Shekhar, Athira Subhash, S. Kalyani <b>arxiv</b></dd>
+            </li>
+            <li>On the estimation of frequency residuals in a radio occultation experiment </li>
+            <dd> Keshav R Tripathi, R K Choudhary, Lakshmi Jayalal <b>Monthly Notices of the Royal Astronomical Society, Volume 517, Issue 1, November 2022</b></dd>
+            <li>Exploring Power Signatures for Location Forensics of Media Recordings</li>
+            <dd>Unnikrishnan S. Nath, Lakshmi Jayalal, Anjana Raju, Gowri S Gopinath, K. Vishnuprasad, Vineeth. V. Warrier, K. Harigovind, Sreenshan M., P. Noufal, <b>IEEE Signal Processing Society SigPort, 2016 [Online]</b></dd>
+        </ol>
+    </p>
+</section>
+<!-- -----------------Courses------- -->
+<section class="courses">
+    <h1 id="courses">Courses</h1>
+    <p>
+        <ol>
+          <li>EE5111: Estimation Theory (Jan-May 2021)</li>
+          <li>EE5140: Digital Modulation and Coding (Jul-Nov 2020)</li>
+          <li>EE2703: Applied Programming Lab (Jan-May 2020)</li>
+          <li>EE1102: Introduction to Programming (Jul-Nov 2019)</li>
+        </ol>
+    </p> 
+</section>
+
+<!-- -----Scholarships/Positions held 2020-2021------ -->
+<!-- <section class="courses">
+    <h1 id="courses">Achievements</h1>
+    <p> 
+        <ol> 
+            <li>Selected as the Prime Minister’s Research Fellow (PMRF scholar)  - (2021- present)</li>
+        </ol>
+    </p>
+</section>
+ -->
+<!-- --------Contact------------ -->
+<section class="Contact">
+   <i class="fa fa-linkedin" onclick="parent.location='https://www.linkedin.com/in/lakshmi-jayalal-238634ab/'"></i>
+   <i class="fa fa-envelope" onclick="mail()"></i>
+</section>
+<!-- -----JavaScript for Toggle Menu-------- -->
+<script>
+    var navLinks=document.getElementById("navLinks")
+    function showMenu(){
+        navLinks.style.right="0";
+        navLinks.style.width="200px"
+    }
+    function hideMenu(){
+        navLinks.style.right="0px";
+        navLinks.style.width="0px";
+    }
+    function Decrypt(){
+    document.getElementById("contact").innerHTML ="Contact me at " +startEncryption("gevtvgvg")+"@"+startEncryption("bhvdg")+"."+startEncryption("xjh");
+    }
+    function startEncryption(originalMessage) {
+      let encryptedMessage = "";
+      for (letter of originalMessage) {
+        encryptedMessage += shiftLetter(letter, 5);
+      }
+        return encryptedMessage;
+    }
+    function shiftLetter(letter, shift) {
+      let newLetter = "";
+
+      let letterCode = letter.charCodeAt(0);
+      let newLetterCode = letterCode + (shift % 26);
+
+      if (newLetterCode < 97) {
+        // If new letter goes below "a" aka character code 97
+        newLetterCode += 26;
+      } else if (newLetterCode > 122) {
+        // If new letter goes past "z" aka character code 122
+        newLetterCode -= 26;
+      }
+
+      newLetter = String.fromCharCode(newLetterCode);
+      
+      return newLetter;
+    }
+    function mail(){
+        msg="mailto:"+startEncryption("gevtvgvg")+"@"+startEncryption("bhvdg")+"."+startEncryption("xjh")
+        window.location=msg;
+    }
+</script>
+</body>
+</html>
